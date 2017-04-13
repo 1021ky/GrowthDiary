@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">成長日記</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="MAIN_TAB_TITLE_EDITOR">日記を書く</string>
+    <string name="MAIN_TAB_TITLE_LIST">日記一覧</string>
+    <string name="MAIN_TAB_TITLE_GRAPH">成長グラフ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="EDITOR_FRAG_DATE">●日付</string>
+    <string name="EDITOR_FRAG_GOAL">●次の目標</string>
+    <string name="EDITOR_FRAG_FACT">●できたこと</string>
+    <string name="EDITOR_FRAG_NOTIFICATION">●感じたこと</string>
+    <string name="EDITOR_FRAG_DISCOVERY">●できた理由</string>
+    <string name="EDITOR_FRAG_EVALUATION">●調子</string>
+    <string name="EDITOR_FRAG_SAVE">保存</string>
+    <string name="LIST_TAB_LIST_HEADER_TITLE">日付</string>
+    <string name="LIST_TAB_LIST_HEADER_RATE">調子</string>
+    <string name="LIST_TAB_LIST_HEADER_CONTENT">できたこと</string>
+    <string name="action_about">このアプリについて</string>
+    <string name="OSS_LICENSE_TITLE">Open source licenses</string>
+    <string name="OK_BUTTON_TEXT">OK</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="STR_NOTIFICATION_TITLE">成長日記</string>
+    <string name="NOTIFICATION_TITLE">成長日記</string>
+    <string name="NOTIFICATION_CONTENT">日記をつけてみましょう!</string>
+</resources>

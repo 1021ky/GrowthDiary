@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="fill_vertical"
+    android:id="@+id/tab_diary_list">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:minHeight="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tab_diary_list_header"
+        style="@android:style/Widget.Material.TextView">
+
+        <TextView
+            android:text="@string/LIST_TAB_LIST_HEADER_TITLE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_header_title"
+            android:layout_weight="4"
+            android:layout_margin="@dimen/text_margin"
+            style="@android:style/Widget.Material.TextView"
+            android:maxLines="@integer/LIST_HEADER_TEXTVIEW_LINE_NUMBER"/>
+
+        <TextView
+            android:text="@string/LIST_TAB_LIST_HEADER_RATE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_header_rate"
+            android:layout_weight="5"
+            android:layout_margin="@dimen/text_margin"
+            style="@android:style/Widget.Material.TextView"
+            android:maxLines="@integer/LIST_HEADER_TEXTVIEW_LINE_NUMBER"/>
+
+        <TextView
+            android:text="@string/LIST_TAB_LIST_HEADER_CONTENT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_header_content"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_weight="3"
+            style="@android:style/Widget.Material.TextView"
+            android:maxLines="@integer/LIST_HEADER_TEXTVIEW_LINE_NUMBER"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tab_diary_list_content"
+        android:name=".view.DiaryListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".view.list.DiaryListFragment"
+        tools:listitem="@layout/fragment_diary_line"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideInset"
+        android:layout_weight="5">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

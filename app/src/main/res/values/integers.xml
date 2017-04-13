@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="LIST_TEXTVIEW_LINE_NUMVER">3</integer>
+    <integer name="LIST_HEADER_TEXTVIEW_LINE_NUMBER">2</integer>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:orientation="horizontal"
+              android:layout_gravity="center_vertical"
+              android:layout_height="wrap_content"
+              android:background="@drawable/diary_line_style"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:visibility="visible"
+        android:textIsSelectable="true"
+        android:lines="@integer/LIST_TEXTVIEW_LINE_NUMVER"
+        android:maxLines="@integer/LIST_TEXTVIEW_LINE_NUMVER"
+        style="@android:style/Widget.Material.TextView"
+        android:layout_marginLeft="@dimen/line_margin"
+        android:layout_marginRight="@dimen/line_margin"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/rate"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:visibility="visible"
+        android:layout_weight="5"
+        android:lines="@integer/LIST_TEXTVIEW_LINE_NUMVER"
+        style="@android:style/Widget.Material.TextView"
+        android:layout_marginLeft="@dimen/line_margin"
+        android:layout_marginRight="@dimen/line_margin"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:visibility="visible"
+        android:textIsSelectable="true"
+        android:lines="@integer/LIST_TEXTVIEW_LINE_NUMVER"
+        android:ellipsize="end"
+        android:maxLines="@integer/LIST_TEXTVIEW_LINE_NUMVER"
+        style="@android:style/Widget.Material.TextView"
+        android:layout_marginLeft="@dimen/line_margin"
+        android:layout_marginRight="@dimen/line_margin"/>
+
+</LinearLayout>

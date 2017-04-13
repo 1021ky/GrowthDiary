@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- タップされたときは色を変える -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <stroke android:width="2dp" android:color="@color/colorAccent" />
+        </shape>
+    </item>
+
+    <!-- 通常時の設定 -->
+    <item android:state_pressed="false">
+        <!--レイヤーを使用して下線のみひく-->
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#FFFFFF"/>
+                    <stroke android:width="2dp" android:color="#000000" />
+                </shape>
+            </item>
+
+            <!-- 2dp分の padding を設定した枠線なし長方形 -->
+            <item android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="#FFFFFF"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>
