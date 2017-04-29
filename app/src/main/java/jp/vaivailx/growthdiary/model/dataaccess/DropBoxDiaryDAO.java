@@ -59,4 +59,9 @@ public class DropBoxDiaryDAO implements IDiaryDAO {
   public DiaryData getDiary(Date titleDate) {
     return null;
   }
+
+  @Override
+  public void deleteDiary(Date titleDate) {
+    ;
+  }
 }

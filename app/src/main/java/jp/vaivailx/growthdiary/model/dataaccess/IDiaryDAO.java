@@ -29,4 +29,6 @@ public interface IDiaryDAO {
   DiaryData getDiary(Date titleDate);
 
   List<DiaryData> getLaterDiaryList(int diaryNum, int offset);
+
+  void deleteDiary(Date titleDate);
 }

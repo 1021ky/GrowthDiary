@@ -100,6 +100,10 @@ public class DiaryManager {
     return data != null ? convertDataToDTO(data) : null;
   }
 
+  public void deleteDiary(Date titleDate) {
+    diaryDAO.deleteDiary(titleDate);
+  }
+
   private DiaryData convertDTOToData(DiaryDTO dto) {
     DiaryData data = new DiaryData();
     data.id = dto.id;

@@ -1,9 +1,11 @@
 package jp.vaivailx.growthdiary.view.editor;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import jp.vaivailx.growthdiary.GrowthDiaryLogUtil;
 import jp.vaivailx.growthdiary.R;
 import jp.vaivailx.growthdiary.model.DiaryData;
@@ -158,6 +161,31 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
       titleEditText.setText("");
     }
   }
+
+  @OnClick(R.id.diary_clear_button)
+  protected void onClickDiaryClearButton(View v){
+
+    new AlertDialog.Builder(getActivity())
+            .setTitle(getString(R.string.EDITOR_CLEAR_CONFIRM_TITLE))
+            .setMessage(getString(R.string.EDITOR_CLEAR_CONFIRM_TEXT))
+            .setPositiveButton(getString(R.string.OK_BUTTON_TEXT), new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                clearDiary();
+              }
+            })
+            .setNegativeButton(getString(R.string.CANCEL_BUTTON_TEXT), null)
+            .show();
+  }
+
+  private void clearDiary() {
+    factEditText.setText("");
+    realizationEditText.setText("");
+    knowledgeEditText.setText("");
+    themeEditText.setText("");
+    ratingBar.setNumStars(0);
+  }
+
 
   private void loadPastDiary(Date titleDate) {
     DiaryDTO dto = diaryManager.getDiary(titleDate);

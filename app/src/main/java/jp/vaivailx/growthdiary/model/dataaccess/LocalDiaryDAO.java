@@ -5,8 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 import io.realm.Sort;
 import jp.vaivailx.growthdiary.model.DiaryData;
+import jp.vaivailx.growthdiary.view.DiaryDTO;
 
 /**
  * Created by vaivailx on 2016/08/06.
@@ -73,6 +76,15 @@ public class LocalDiaryDAO implements IDiaryDAO {
     mRealm.executeTransaction(new Realm.Transaction() {
       @Override
       public void execute(Realm realm) {
+        if (diaryData.fact == ""
+                && diaryData.realization == ""
+                && diaryData.theme == ""
+                && diaryData.knowledge == ""
+                && diaryData.evaluation == 0){
+          deleteDiary(diaryData.titleDate);
+          return;
+        }
+
         if (realm.where(DiaryData.class)
                 .equalTo("titleDate", diaryData.titleDate)
                 .findAll()
@@ -118,5 +130,20 @@ public class LocalDiaryDAO implements IDiaryDAO {
   @Override
   public DiaryData getDiary(Date titleDate) {
     return mRealm.where(DiaryData.class).equalTo("titleDate", titleDate).findFirst();
+  }
+
+  @Override
+  public void deleteDiary(final Date titleDate) {
+    mRealm.executeTransaction(new Realm.Transaction() {
+      @Override
+      public void execute(Realm realm) {
+        RealmQuery<DiaryData> result = realm.where(DiaryData.class).equalTo("titleDate", titleDate);
+        if (result.count() >= 1){
+          result.findFirst().deleteFromRealm();
+          return;
+        }
+
+      }
+    });
   }
 }

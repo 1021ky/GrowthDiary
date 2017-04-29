@@ -56,6 +56,7 @@ public class DiaryListRecyclerViewAdapter extends RecyclerView.Adapter<DiaryList
         }
       }
     });
+
   }
 
 

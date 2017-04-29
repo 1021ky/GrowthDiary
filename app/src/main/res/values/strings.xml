@@ -25,4 +25,10 @@
     <string name="STR_NOTIFICATION_TITLE">成長日記</string>
     <string name="NOTIFICATION_TITLE">成長日記</string>
     <string name="NOTIFICATION_CONTENT">日記をつけてみましょう!</string>
+    <string name="EDITOR_DELETE_BUTTON_TEXT">クリア</string>
+    <string name="EDITOR_CLEAR_BUTTON_TEXT">クリア</string>
+    <string name="CONFIRM_CLEAR">この日記の内容をクリアしてよろしいですか?</string>
+    <string name="EDITOR_CLEAR_CONFIRM_TITLE">注意</string>
+    <string name="EDITOR_CLEAR_CONFIRM_TEXT">この日記をクリアしても良いですか?</string>
+    <string name="CANCEL_BUTTON_TEXT">キャンセル</string>
 </resources>
