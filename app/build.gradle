@@ -38,6 +38,7 @@ dependencies {
 
     // Set this dependency to use JUnit 4 rules
     // Set this dependency to build and run Espresso tests
+    compile 'com.beardedhen:androidbootstrap:2.3.1'
     compile 'com.android.support:design:23.4.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:support-v4:23.4.0'

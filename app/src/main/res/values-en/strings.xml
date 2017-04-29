@@ -23,4 +23,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="NOTIFICATION_TITLE">GrowthDiary</string>
     <string name="NOTIFICATION_CONTENT">Keep a diary!</string>
+    <string name="EDITOR_DELETE_BUTTON_TEXT">clear</string>
+    <string name="EDITOR_CLEAR_BUTTON_TEXT">clear</string>
+    <string name="CONFIRM_CLEAR">Do you want to clear this page?</string>
+    <string name="EDITOR_CLEAR_CONFIRM_TEXT">Wolud you like to clear this Diary?</string>
+    <string name="EDITOR_CLEAR_CONFIRM_TITLE">Caution</string>
+    <string name="CANCEL_BUTTON_TEXT">Cancel</string>
 </resources>

@@ -3,6 +3,8 @@ package jp.vaivailx.growthdiary;
 import android.app.Application;
 import android.content.Intent;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+
 import io.realm.DynamicRealm;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -20,6 +22,9 @@ public class GrowthDiaryApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    // bootstrap初期化
+    TypefaceProvider.registerDefaultIconSets();
+
     Realm.init(getApplicationContext());
     RealmConfiguration realmConfig = buildRealmConfiguration();
     // テスト用コード
@@ -48,3 +53,4 @@ public class GrowthDiaryApplication extends Application {
             })
             .build();
   }}
+
