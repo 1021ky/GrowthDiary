@@ -31,4 +31,14 @@ public class DiaryDTO {
   // 更新日
   public Date updateDate;
 
+  public DiaryDTO() {
+    id = 0;
+    titleDate = null;
+    fact = null;
+    realization = null;
+    knowledge = null;
+    theme = null;
+    evaluation = 0;
+    updateDate = null;
+  }
 }

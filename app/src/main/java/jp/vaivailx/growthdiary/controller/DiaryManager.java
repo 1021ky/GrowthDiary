@@ -39,7 +39,7 @@ public class DiaryManager {
   /**
    * 日記データを更新する。更新対象がない場合は追加する。
    * @param diaryDTO 追加・更新データ
-   * @return 追加・更新結果
+   * @return 追加・更新結果。何もしなかった場合nullが返る。
    */
   public DiaryDTO updateDiary(DiaryDTO diaryDTO) {
     DiaryData updateData = convertDTOToData(diaryDTO);
@@ -50,6 +50,9 @@ public class DiaryManager {
       diaryDAO.updateDiary(updateData);
     }
     DiaryData updatedData = diaryDAO.getDiary(updateData);
+    if (updatedData == null) {
+      return null;
+    }
     return convertDataToDTO(updatedData);
   }
 

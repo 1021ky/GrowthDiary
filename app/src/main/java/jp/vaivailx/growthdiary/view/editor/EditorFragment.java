@@ -184,6 +184,17 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     knowledgeEditText.setText("");
     themeEditText.setText("");
     ratingBar.setNumStars(0);
+
+    String titleDateString = EditorFragment.this.titleEditText.getText().toString();
+    if (!titleDateString.equals("")) {
+      try {
+        Date titleDate = new SimpleDateFormat(DATE_PATTERN, Locale.JAPAN).parse(titleDateString);
+        diaryManager.deleteDiary(titleDate);
+      } catch (ParseException e) {
+        e.printStackTrace();
+      }
+    }
+
   }
 
 
@@ -250,8 +261,10 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     this.factEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
-        saveDiary();
-        mListener.onEditorFragmentInteraction(null);
+        if (!hasFocus) {
+          saveDiary();
+          mListener.onEditorFragmentInteraction(null);
+        }
       }
     });
   }
@@ -260,8 +273,10 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     this.realizationEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
-        saveDiary();
-        mListener.onEditorFragmentInteraction(null);
+        if (!hasFocus) {
+          saveDiary();
+          mListener.onEditorFragmentInteraction(null);
+        }
       }
     });
   }
@@ -270,8 +285,10 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     this.knowledgeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
-        saveDiary();
-        mListener.onEditorFragmentInteraction(null);
+        if (!hasFocus) {
+          saveDiary();
+          mListener.onEditorFragmentInteraction(null);
+        }
       }
     });
   }
@@ -280,8 +297,10 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     this.themeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
-        saveDiary();
-        mListener.onEditorFragmentInteraction(null);
+        if (!hasFocus) {
+          saveDiary();
+          mListener.onEditorFragmentInteraction(null);
+        }
       }
     });
   }
@@ -290,8 +309,10 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     this.ratingBar.setOnFocusChangeListener(new View.OnFocusChangeListener() {
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
-        saveDiary();
-        mListener.onEditorFragmentInteraction(null);
+        if (!hasFocus) {
+          saveDiary();
+          mListener.onEditorFragmentInteraction(null);
+        }
       }
     });
   }
@@ -310,7 +331,12 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
         editorDiaryDTO.theme = themeEditText.getText().toString();
         editorDiaryDTO.evaluation = Math.round(ratingBar.getRating());
 
-        editorDiaryDTO = diaryManager.updateDiary(editorDiaryDTO);
+        DiaryDTO updatedDTO = diaryManager.updateDiary(editorDiaryDTO);
+        if (updatedDTO == null) {
+          return;
+        } else {
+          editorDiaryDTO.updateDate = updatedDTO.updateDate;
+        }
       }
     } catch (ParseException e) {
       Log.w(GrowthDiaryLogUtil.ERROR_TAG, "onClick: ", e);

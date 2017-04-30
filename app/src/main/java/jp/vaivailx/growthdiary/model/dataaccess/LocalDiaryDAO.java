@@ -38,10 +38,10 @@ public class LocalDiaryDAO implements IDiaryDAO {
       @Override
       public void execute(Realm realm) {
         // 何も書いてない日記は追加しない
-        if (diaryData.fact == ""
-                && diaryData.realization == ""
-                && diaryData.theme == ""
-                && diaryData.knowledge == ""
+        if (diaryData.fact.equals("")
+                && diaryData.realization.equals("")
+                && diaryData.theme.equals("")
+                && diaryData.knowledge.equals("")
                 && diaryData.evaluation == 0){
           return;
         }
@@ -76,15 +76,6 @@ public class LocalDiaryDAO implements IDiaryDAO {
     mRealm.executeTransaction(new Realm.Transaction() {
       @Override
       public void execute(Realm realm) {
-        if (diaryData.fact == ""
-                && diaryData.realization == ""
-                && diaryData.theme == ""
-                && diaryData.knowledge == ""
-                && diaryData.evaluation == 0){
-          deleteDiary(diaryData.titleDate);
-          return;
-        }
-
         if (realm.where(DiaryData.class)
                 .equalTo("titleDate", diaryData.titleDate)
                 .findAll()
