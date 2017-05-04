@@ -76,13 +76,12 @@ public class LocalDiaryDAO implements IDiaryDAO {
     mRealm.executeTransaction(new Realm.Transaction() {
       @Override
       public void execute(Realm realm) {
-        if (realm.where(DiaryData.class)
-                .equalTo("titleDate", diaryData.titleDate)
-                .findAll()
-                .where()
-                .equalTo("updateDate", diaryData.updateDate)
-                .findAll().size() == 0) {
+        DiaryData data = getDiary(diaryData);
+        if (data == null) {
           return;
+        } else {
+          diaryData.id = data.id;
+          diaryData.updateDate = new Date();
         }
         realm.copyToRealmOrUpdate(diaryData);
       }
