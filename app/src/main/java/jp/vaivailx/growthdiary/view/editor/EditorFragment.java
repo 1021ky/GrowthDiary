@@ -26,7 +26,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.vaivailx.growthdiary.GrowthDiaryLogUtil;
 import jp.vaivailx.growthdiary.R;
-import jp.vaivailx.growthdiary.model.DiaryData;
 import jp.vaivailx.growthdiary.controller.DiaryManager;
 import jp.vaivailx.growthdiary.view.DiaryDTO;
 
@@ -183,7 +182,7 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     realizationEditText.setText("");
     knowledgeEditText.setText("");
     themeEditText.setText("");
-    ratingBar.setNumStars(0);
+    ratingBar.setRating(0.f);
 
     String titleDateString = EditorFragment.this.titleEditText.getText().toString();
     if (!titleDateString.equals("")) {
@@ -306,14 +305,12 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
   }
 
   private void setRatingBarEventLister() {
-    this.ratingBar.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-      @Override
-      public void onFocusChange(View v, boolean hasFocus) {
-        if (!hasFocus) {
+    this.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        @Override
+        public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
           saveDiary();
           mListener.onEditorFragmentInteraction(null);
         }
-      }
     });
   }
 
@@ -349,6 +346,7 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     if (itemID != 0) {
       editorDiaryDTO = this.diaryManager.getDiary(itemID);
       convertDTOToView();
+      factEditText.requestFocus();
     }
   }
 
