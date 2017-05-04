@@ -202,6 +202,7 @@ public class EditorFragment extends Fragment implements DatePickerDialogFragment
     if (dto != null) {
       editorDiaryDTO = dto;
     } else {
+      editorDiaryDTO = new DiaryDTO();
       editorDiaryDTO.titleDate = titleDate;
     }
     convertDTOToView();
