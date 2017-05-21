@@ -57,6 +57,38 @@ public class DiaryListRecyclerViewAdapter extends RecyclerView.Adapter<DiaryList
       }
     });
 
+    holder.mDateView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (mListener != null) {
+          // Notify the active callbacks interface (the activity, if the
+          // fragment is attached to one) that an item has been selected.
+          mListener.onListFragmentInteraction(holder.mItem.id);
+        }
+      }
+    });
+
+    holder.mRateView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (mListener != null) {
+          // Notify the active callbacks interface (the activity, if the
+          // fragment is attached to one) that an item has been selected.
+          mListener.onListFragmentInteraction(holder.mItem.id);
+        }
+      }
+    });
+
+    holder.mContentView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (mListener != null) {
+          // Notify the active callbacks interface (the activity, if the
+          // fragment is attached to one) that an item has been selected.
+          mListener.onListFragmentInteraction(holder.mItem.id);
+        }
+      }
+    });
   }
 
 
