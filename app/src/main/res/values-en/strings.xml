@@ -8,10 +8,10 @@
     <string name="EDITOR_FRAG_FACT">-achivement</string>
     <string name="EDITOR_FRAG_NOTIFICATION">-realization</string>
     <string name="EDITOR_FRAG_DISCOVERY">-reason</string>
-    <string name="EDITOR_FRAG_EVALUATION">-evaluation</string>
+    <string name="EDITOR_FRAG_EVALUATION">-condition</string>
     <string name="EDITOR_FRAG_SAVE">save</string>
-    <string name="LIST_TAB_LIST_HEADER_TITLE">日付</string>
-    <string name="LIST_TAB_LIST_HEADER_RATE">調子</string>
+    <string name="LIST_TAB_LIST_HEADER_TITLE">date</string>
+    <string name="LIST_TAB_LIST_HEADER_RATE">condition</string>
     <string name="LIST_TAB_LIST_HEADER_CONTENT">achivement</string>
     <string name="action_about">about this app</string>
     <string name="OSS_LICENSE_TITLE">Open source licenses</string>
@@ -29,4 +29,5 @@
     <string name="EDITOR_CLEAR_CONFIRM_TEXT">Wolud you like to clear this Diary?</string>
     <string name="EDITOR_CLEAR_CONFIRM_TITLE">Caution</string>
     <string name="CANCEL_BUTTON_TEXT">Cancel</string>
+    <string name="GRAPH_TITLE">condition</string>
 </resources>

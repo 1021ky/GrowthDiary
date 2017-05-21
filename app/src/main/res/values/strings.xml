@@ -31,4 +31,5 @@
     <string name="EDITOR_CLEAR_CONFIRM_TITLE">注意</string>
     <string name="EDITOR_CLEAR_CONFIRM_TEXT">この日記をクリアしても良いですか?</string>
     <string name="CANCEL_BUTTON_TEXT">キャンセル</string>
+    <string name="GRAPH_TITLE">調子</string>
 </resources>
