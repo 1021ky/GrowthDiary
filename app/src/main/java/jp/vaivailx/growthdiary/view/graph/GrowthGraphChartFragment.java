@@ -17,6 +17,10 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -105,6 +109,7 @@ public class GrowthGraphChartFragment extends Fragment {
     set1 = new LineDataSet(values, getResources().getString(R.string.GRAPH_TITLE));
 
     // set the line to be drawn like this "- - - - - -"
+    set1.setValueFormatter(new DefaultValueFormatter(0));
     set1.enableDashedLine(10f, 5f, 0f);
     set1.enableDashedHighlightLine(10f, 5f, 0f);
     set1.setColor(Color.BLACK);
@@ -148,9 +153,10 @@ public class GrowthGraphChartFragment extends Fragment {
     mChart.setScaleEnabled(true);
 
     XAxis xAxis = mChart.getXAxis();
+    IAxisValueFormatter formatter = new DefaultAxisValueFormatter(1);
+    xAxis.setValueFormatter(formatter);
     xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
     xAxis.enableGridDashedLine(10f, 10f, 0f);
-
     YAxis leftAxis = mChart.getAxisLeft();
     leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
 
