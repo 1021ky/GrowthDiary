@@ -4,6 +4,8 @@
 
     <!--端末起動時のブロードキャストを受け取る-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".GrowthDiaryApplication"
