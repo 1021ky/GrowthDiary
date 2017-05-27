@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 /**
  * Created by vaivailx on 2016/07/01.
@@ -34,5 +35,8 @@ public class TopViewPager extends ViewPager {
   public void setCurrentItem(int item) {
     super.setCurrentItem(item);
     // TODO リロードする
+
+    InputMethodManager imm = (InputMethodManager)(this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE));
+    imm.hideSoftInputFromWindow(getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
   }
 }
